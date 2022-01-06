@@ -83,7 +83,7 @@ CREATE SET TABLE CommonColumnTypes_Character_Test, FALLBACK
     --Character
     char_type_col1      CHAR(3),
     char_type_col2      CHARACTER NOT NULL UPPERCASE,
-    char_type_col3      CHARACTER(3) CHARACTER SET GRAPHIC,    
+    char_type_col3      CHARACTER(3) CHARACTER SET GRAPHIC,
     varchar_type_col1   VARCHAR(10) NOT NULL,
     varchar_type_col2   VARCHAR(1000) NULL,
     varchar_type_col3   LONG VARCHAR,
