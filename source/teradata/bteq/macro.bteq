@@ -1,0 +1,32 @@
+* BTEQ - Creating and calling Macro in Teradata
+*    You can create/call a macro directly in a script.
+*    After entering the login credentials EXECUTE macro will be supplied.
+*
+*    You can call the macro from BTEQ, which was already created or you can dynamically craete it in BTEQ script itself.
+*
+*    Syntax:
+*            .LOGON localtd/tduser, pwd;
+*            EXECUTE macro;
+*            .LOGOFF
+*
+*
+
+
+* Example 1:
+* Calling macro which was created already,
+
+.LOGON localtd/tduser, pass;
+EXECUTE mc_employee;
+.LOGOFF
+
+
+* Example 2:
+* Creating a macro dynamically in the BTEQ script and calling it.
+
+.LOGON localtd/tduser, pwd;
+CREATE MACRO mc_emp AS
+( ECHO '.SET SEPARATOR '' | '' '
+;SELECT * FROM tbl_employee;
+);
+EXECUTE mc_emp;
+.LOGOFF

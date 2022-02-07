@@ -80,7 +80,6 @@ END;
 --
 
 -- Sample Tables
-
 --DDL defines the accounts table:
 CREATE MULTISET TABLE sampleDb.tAccounts, NO FALLBACK,
      NO BEFORE JOURNAL,

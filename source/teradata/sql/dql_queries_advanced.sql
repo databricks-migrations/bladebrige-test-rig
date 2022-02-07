@@ -357,6 +357,7 @@ FROM
 -------------------+------------------------------------
 
 
+
 --Example 1: Display timestamp in YYYY/MM/DD HH:MI:SS format
 --BTEQ SYNTAX: 
 SELECT  CURRENT_TIMESTAMP (format 'YYYY/MM/DDbHH:MI:SS') Formated_timestamp;

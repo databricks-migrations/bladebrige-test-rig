@@ -1,0 +1,26 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+* BTEQ - To execute the given SQL statement repeatedly in Teradata
+*
+*    Syntax:
+*            Select top 1* from database.table1;
+*            =n
+*            Here =n is to run the previous sql statement, "n" number of times.
+*
+
+* Example:
+.LOGON localtd/dbc, dbc;
+Select top 1* from emp.employee;
+=4
+
+
+* BTEQ - REPEAT command in Teradata
+*    When multiple statements have to be rendered against a database, the REPEAT command will be useful.
+*    For example, if you want to update the salary for multiple employees like below in a BTEQ script,
+* Example: .REPEAT
+*
+.LOGON localtd/dbc, dbc;
+.IMPORT data file = sample.txt;
+.REPEAT 3
+using empno (char(4))
+UPDATE tbl_employee SET salary=2*salary WHERE emp_no= :empno 

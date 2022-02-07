@@ -1,0 +1,34 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+* BTEQ - ERRORCODE - Checking for errors in Teradata
+* ERRORCODE indicates the actual completion code associated with the request.
+* It will return the code for most recent Teradata SQL request.
+* If ERRORCODE is Zero, then the request ran fine without any errors.
+* Syntax:
+*         .LOGON localtd/dbc, dbc;
+*         <Query>
+*         .IF ERRORCODE = 0 THEN 
+*         <Next BTEQ operation>
+*
+* Example:
+.RUN FILE c:\tx\sample.txt;
+
+* Consider the below content is in the above path.
+.LOGON localtd/dbc,dbc
+ 
+DATABASE forgetcode;
+DELETE FROM tbl_employee;
+ 
+.IF ERRORCODE=0 THEN .GOTO ins
+ 
+CREATE TABLE tbl_employee(
+id INT,
+name VARCHAR(30),
+Salary DECIMAL(30,4));
+ 
+.LABEL ins
+INSERT INTO tbl_employee(1,'Ruby',15000);
+INSERT INTO tbl_employee(2,'Rose',17000);
+ 
+.LOGOFF
+.EXIT

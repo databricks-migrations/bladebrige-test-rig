@@ -1,0 +1,33 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+** BTEQ - To skip first record while importing in teradata
+*    skip=1 will skip the first record.
+*
+*    Syntax:
+*            .import infile=<filename>, skip=1;
+*
+*
+* Example:
+.LOGON localtd/dbc, dbc;
+.IMPORT data file = sample.txt, skip=1;
+.REPEAT 3
+using empno (char(4))
+UPDATE tbl_employee SET salary=2*salary WHERE emp_no= :empno 
+
+* example 2 *
+.LOGON dbc, dbc;
+.import vartext '|' FILE = /root/ETL/new_revision/report.csv, skip=1;
+.REPEAT *
+ USING (
+     EmpNo VARCHAR(2000)
+    ,Name  VARCHAR(2000)
+    ,hire_date VARCHAR(2000)
+     )
+INSERT INTO retail.employee_import
+    VALUES (
+    :EmpNo,
+    :Name,
+    CAST(:hire_date AS DATE),
+    );
+.QUIT
+.LOGOFF

@@ -1,0 +1,20 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+* BTEQ - ERROROUT in Teradata
+*   BTEQ routes the standard error stream and the standard output stream to two files.
+*   Syntax:
+*           .SET ERROROUT STDOUT;
+*           .SET ERROROUT STDERR;
+* 
+
+* BTEQ - Executing stored procedure in Teradata
+* You can call a stored procedure directly in a BTEQ script by rendering CALL command.
+* Syntax:
+*         CALL stored procedure ([Parameters]);
+*
+* Example:
+*  Calling stored procedure sp_emp by passing name and employee number.
+.LOGON localtd/tduser, tdpass;
+CALL sp_emp('Rufus', 12345);
+.LOGOFF
+.EXIT

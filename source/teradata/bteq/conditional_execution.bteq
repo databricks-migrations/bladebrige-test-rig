@@ -1,0 +1,19 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+
+* BTEQ - If Else Command in Teradata
+*  In BTEQ, If else condition is being used to check the error code and activity counts.
+*
+*
+* Examples:
+*
+* Checking Error code::
+IF ERRORCODE > 0 THEN .GOTO label1
+ELSE
+.EXPORT DATA FILE = file_name 
+
+* Checking for Activity count:
+SQL statement
+.IF ACTIVITYCOUNT =0 THEN .GOTO label1
+ELSE
+.EXPORT DATA FILE = file_name 

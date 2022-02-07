@@ -1,0 +1,16 @@
+* BTEQ - REMARK command in Teradata
+*    REMARK places a string in the screen to intimate information.
+*
+*    Syntax:
+*            .REMARK  string;
+*
+* Example:
+
+.LOGON tdid/user, pass;
+.REMARK 'This is a line of commentary//
+ And another line too'
+.REMARK 'This is a line //of commentary//
+ And another line//too' 
+.LOGOFF
+
+

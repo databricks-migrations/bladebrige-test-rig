@@ -13,19 +13,19 @@ LOGON 192.168.1.102/dbc,dbc;
          FILE = employee.txt;
       INSERT INTO Employee_Stg (
          EmployeeNo,
-         FirstName,
-         LastName,
          BirthDate,
          JoinedDate, 
-         DepartmentNo
+         DepartmentNo,
+         FirstName,
+         LastName,
       ) 
       VALUES (  
          :in_EmployeeNo, 
-         :in_FirstName, 
-         :in_LastName, 
          :in_BirthDate (FORMAT 'YYYY-MM-DD'), 
          :in_JoinedDate (FORMAT 'YYYY-MM-DD'),
-         :in_DepartmentNo
+         :in_DepartmentNo,
+         FirstName,
+         LastName
       ); 
    END LOADING;  
 LOGOFF;

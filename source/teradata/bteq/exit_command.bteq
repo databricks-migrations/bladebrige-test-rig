@@ -1,0 +1,29 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+* BTEQ - EXIT or QUIT in Teradata
+* The BTEQ EXIT and QUIT commands are identical.
+* The EXIT command ends the current RDBMS sessions and exits BTEQ.
+* LOGOFF command is not required when you want to use EXIT or QUIT.
+* You may find it convenient to use the EXIT command to signify 
+* a normal ending and use the QUIT command to signify an abnormal ending.
+* Syntax:
+*         .EXIT
+*         or
+*         .QUIT
+*
+* BTEQ - Exporting results to a file in Teradata
+*  You can export/write the output of Teradata SQL command to a local file by EXPORT Bteq command.
+*  Syntax:
+*          .EXPORT FILE = <Local path>;
+*
+
+* Example:
+.LOGON localtd/dbc,dbc;
+.EXPORT FILE = C:\TX\out.txt;
+.SET SEPARATOR '|'
+
+DATABASE forgetcode;
+SELECT * FROM tbl_employee;
+ 
+.LOGOFF
+.EXIT

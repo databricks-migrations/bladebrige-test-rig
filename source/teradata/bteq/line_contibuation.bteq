@@ -1,0 +1,11 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+
+* BTEQ - Continuing BTEQ commands in Teradata
+*    You can continue a BTEQ command from one line to the 
+*    next by including a dash character (-) as the 
+*    last character of the line.
+*
+.SET HEADING 'Actually -
+i am coming from -
+forget code'

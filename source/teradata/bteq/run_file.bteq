@@ -1,0 +1,19 @@
+* source: https://forgetcode.com/Teradata/3014/BTEQ *
+*
+** BTEQ - Creating RUN FILE in Teradata
+*  In BTEQ, the commands can be put in a file and the 
+*  file name will be supllied with RUN FILE command.
+*  Syntax:
+*          .RUN FILE filename;
+*          or
+*          .RUN DDNAME filename;
+*
+
+* Suppose, the below content is in a file C:\Sample.txt
+.LOGON tdpid/userid,password
+SELECT * FROM department;
+.LOGOFF
+
+* Then, you can supply directly the file to run before executing logon command.
+* '=' is optional
+.RUN FILE = C:\Sample.txt;

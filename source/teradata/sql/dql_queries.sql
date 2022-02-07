@@ -41,7 +41,7 @@ WHERE EmployeeNo in (101, 102, 103);
 
 --
 -- NOT IN
-SELECT * FROM  
+SELECT *  
 FROM db_schema.dql_test_table1
 WHERE EmployeeNo not in (101,102,103);
 
@@ -114,6 +114,8 @@ SELECT 'data' || ' ' || 'warehouse';
 SELECT UPPER('data');
 SELECT LOWER('DATA');
 
+-- issue# td-27
+SELECT 4 ** 2;
 
 SELECT EXTRACT(YEAR FROM CURRENT_DATE);  
 SELECT EXTRACT(MONTH FROM CURRENT_DATE); 

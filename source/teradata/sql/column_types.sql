@@ -70,6 +70,7 @@ CREATE SET TABLE CommonColumnTypes_Byte_Test, FALLBACK
 (
     id int,
     --Byte
+    single_byte_type_col       BYTE,
     byte_type_col       BYTE(4),
     varbyte_type_col    VARBYTE(1024),
     blob_type_col       BLOB(128K)
